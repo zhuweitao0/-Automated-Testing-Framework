@@ -1,3 +1,12 @@
 # -Automated-Testing-Framework
 简单的心理测评平台的自动化测试框架包括[管理员登录——发布测评——学生登录——获取测评并随机作答——查看报告——管理员端根据报告获取预警信息]
-#1111#
+
+config为配置文件
+test为主程序
+concurrent_test_manager为并发管理
+full_test_manager和test_runner为测试执行
+scale_service为问卷服务
+task_service为任务服务
+auth_service为认证服务
+api_client为api客户端其中_make_request用于返回响应数据,log_response用于打印到控制台
+admin_service为管理员登录
