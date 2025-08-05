@@ -1,12 +1,43 @@
 # -Automated-Testing-Framework
-简单的心理测评平台的自动化测试框架包括[管理员登录——发布测评——学生登录——获取测评并随机作答——查看报告——管理员端根据报告获取预警信息]
+项目概述  
+这是一个针对简易心理测评平台的自动化测试框架，完整覆盖从管理员登录到生成预警报告的整套业务流程包括[管理员登录——发布测评——学生登录——获取测评并随机作答——查看报告——管理员端根据报告获取预警信息]。
 
-config为配置文件
-test为主程序
-concurrent_test_manager为并发管理
-full_test_manager和test_runner为测试执行
-scale_service为问卷服务
-task_service为任务服务
-auth_service为认证服务
-api_client为api客户端其中_make_request用于返回响应数据,log_response用于打印到控制台
-admin_service为管理员登录
+框架结构  
+自动化测试框架/  
+│  
+├── config/                  # 配置文件目录  
+├── test/                    # 主程序入口  
+├── concurrent_test_manager/ # 并发测试管理模块  
+├── full_test_manager/       # 全流程测试管理  
+├── test_runner/             # 测试执行器  
+├── scale_service/           # 测评问卷服务  
+├── task_service/            # 任务管理服务  
+├── auth_service/            # 认证鉴权服务  
+├── api_client/              # API客户端  
+│   ├── _make_request        # 请求处理与响应返回  
+│   └── log_response         # 控制台响应日志输出  
+└── admin_service/           # 管理员服务  
+
+核心组件说明  
+API客户端(api_client)  
+_make_request: 封装API请求并返回响应数据  
+log_response: 将响应信息输出到控制台便于调试  
+服务模块  
+​​认证服务​​：处理用户登录鉴权  
+​​管理员服务​​：实现管理员专属功能  
+​​测评服务​​：管理测评问卷相关操作  
+​​任务服务​​：处理测试任务调度  
+测试管理  
+​​并发测试管理​​：实现多线程并行测试  
+​​全流程测试​​：编排端到端测试场景 
+​​测试执行器​​：运行具体测试用例  
+快速开始  
+克隆本项目仓库  
+在config/目录下配置环境参数  
+通过test/主程序启动测试  
+
+项目特点  
+✅ 完整业务流程覆盖  
+✅ 模块化设计便于扩展  
+✅ 支持并发测试场景  
+✅ 详细的日志输出  
